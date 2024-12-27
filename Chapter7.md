@@ -148,7 +148,7 @@ Figure 7-6. Side effects of redo log optimization at low concurrency: more I/O f
 
 From the figure, it can be observed that with 3 concurrent read-write operations, each transaction averages over 9 flushes, while at 200 concurrency, it decreases to around 1 flush per transaction. These average flush counts can be further optimized, but it requires finding a balance: timely flushing activates user threads more quickly but incurs higher I/O overhead, whereas delaying flushing reduces I/O costs but may increase user response times.
 
-It is important to note that the Redo log improvements are primarily focused on enhancing overall performance in high-concurrency environments, but they perform poorly in scenarios with fewer than 50 concurrent connections. Many users have complained that MySQL 8.0's performance falls short of expectations, and this is the root cause.
+It is important to note that the Redo log improvements are primarily focused on enhancing overall performance in high-concurrency environments, but they perform poorly in scenarios with fewer than 50 concurrent connections. Many users have complained that MySQL 8.0's performance falls short of expectations, and this is one of the fundamental reasons.
 
 ### 7.1.2 Optimizing Lock-Sys Through Latch Sharding
 
