@@ -84,6 +84,7 @@ When deploying MySQL for testing, it is preferable to match the test environment
 13. Cluster settings include *replica_preserve_commit_order=on*.
 14. Most tests are based on BenchmarkSQL TPC-C.
 15. Unless stated otherwise, TPC-C tests are generally based on partitioned large tables.
+16. Due to the extensive number of tests, the related software, hardware, and configurations are detailed in the Appendix.
 
 ## How to Contact Us
 
