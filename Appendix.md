@@ -274,7 +274,7 @@ This schema is used by five different transactions, each creating varied access 
 4. **Order and Order-Line:** Inserts with time-delayed updates, causing rows to become stale and infrequently read.
 5. **History:** Insert-only.
 
-The diverse access patterns of this small schema with a limited number of transactions contribute to TPC-C's ongoing significance as a major database benchmark. In this book, BenchmarkSQL is primarily employed to evaluate TPC-C performance in MySQL.
+The diverse access patterns of this small schema with a limited number of transactions contribute to TPC-C's ongoing significance as a major database benchmark. In this book, BenchmarkSQL [65] is primarily employed to evaluate TPC-C performance in MySQL.
 
 ## How MySQL Processes SQL?
 
