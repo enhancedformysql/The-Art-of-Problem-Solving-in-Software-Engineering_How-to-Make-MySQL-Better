@@ -153,7 +153,7 @@ From a mathematical perspective, heap data structures have a balanced tree struc
 
 A hash table, also known as a hash map, is a data structure designed for fast value retrieval based on keys. It uses a hashing function to map keys to indices in an array, allowing for average constant-time access. Hash tables are commonly used in dictionaries, caches, and database indexing. Despite their efficiency, hash collisions can degrade performance, and techniques such as chaining and open addressing are used to manage them.
 
-The primary advantage of hash tables is their rapid query speed, but they can be less cache-friendly due to the dispersed memory pointers stored in hash slots. This dispersion can lead to inefficiencies during frequent access operations.
+The primary advantage of traditional hash tables lies in their fast query speed. However, due to the scattered memory pointers stored in hash slots, they may not be very cache-friendly. This scattering can lead to reduced efficiency during frequent access operations. To address this issue, solutions like Google's Swiss Table have emerged, which employ a cache-friendly and more efficient approach to make comparisons and insertions faster. However, such solutions are not universal and are not particularly suitable for database usage.
 
 In MySQL, hash tables are widely used, leveraging both STL types like *unordered_set* and *unordered_map*, as well as custom-designed hash tables tailored to specific use cases. For instance, the *hash_table_t* data type, used in the buffer pool for page management, exemplifies such specialized implementations.
 
