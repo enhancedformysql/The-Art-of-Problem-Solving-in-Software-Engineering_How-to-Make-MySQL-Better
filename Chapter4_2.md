@@ -196,6 +196,8 @@ class hash_table_t {
   ...
 ```
 
+Note that the page-based buffer pool has low caching efficiency, and the page translation table is a scalability bottleneck [64]. 
+
 The certification database of Group Replication uses the *std::unordered_map* hash table to handle a large volume of certification information.
 
 ```c++

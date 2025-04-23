@@ -118,16 +118,23 @@
 
 [59] J. M. Hellerstein, M. Stonebraker, and J. R. Hamilton. Architecture of a database system. Foundations and Trends in Databases. 1(2) pp. 141--259, 2007.
 
-[60] https://github.com/session-replay-tools/tcpcopy.
-
-[61] <https://github.com/session-replay-tools/cetus>.
+[60] Chuanpeng Li, Chen Ding, and Kai Shen. Quantifying the cost of context switch. In Proceedings of the 2007 workshop on Experimental computer science, ExpCS ’07, New York, NY, USA, 2007. ACM.
+[61] Xiangpeng Hao, Xinjing Zhou, Xiangyao Yu, and Michael Stonebraker. 2024. Towards Buffer Management with Tiered Main Memory. Proc. ACM Manag. Data 2, 1 (Feb. 2024), Article 31. SIGMOD.
 
 [62] Guoliang Jin, Linhai Song, Xiaoming Shi, Joel Scherpelz, and Shan Lu. 2012. Understanding and detecting real-world performance bugs. In ACM SIGPLAN Conference on Programming Language Design and Implementation, PLDI '12, Beijing, China - June 11 - 16, 2012. 77–88.
 
 [63] Jelena Antic, Georgios Chatzopoulos, Rachid Guerraoui, and Vasileios Trigonakis. 2016. Locking made easy. In Proceedings of the International Middleware Conference (Middleware). 1--14.
 
-[64] https://github.com/enhancedformysql/enhancedformysql.
+[64] D. Dice and A. Kogan, "Avoiding scalability collapse by restricting concurrency" in Euro-Par 2019: Parallel Processing, Cham:Springer International Publishing, pp. 363-376, 2019.
 
-[65] https://github.com/enhancedformysql/benchmarksql.
+[65] https://github.com/session-replay-tools/tcpcopy.
+
+[66] https://github.com/session-replay-tools/cetus.
+
+[67] https://github.com/enhancedformysql/enhancedformysql.
+
+[68] https://github.com/enhancedformysql/benchmarksql.
+
+[69] https://github.com/enhancedformysql/tech-explorer-hub.
 
 [Next](Appendix.md)

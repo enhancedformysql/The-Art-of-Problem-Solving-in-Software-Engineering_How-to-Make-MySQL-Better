@@ -36,7 +36,7 @@ The figure below illustrates the comparison results of TPC-C tests across differ
 
 Figure 4-3. Performance Comparison in SMP vs. NUMA.
 
-In the scenario where NUMA node 0 is bound, the throughput versus concurrency curve is notably smooth. Even under high concurrency, there is only a slight decline in throughput, indicating low thread context switching costs. However, throughput consistently remains below 400,000 tpmC due to significant limitations in memory bandwidth, characteristic of traditional SMP architecture.
+In the scenario where NUMA node 0 is bound, the throughput versus concurrency curve is notably smooth. Even under high concurrency, there is only a slight decline in throughput, indicating low thread context switching costs [60]. However, throughput consistently remains below 400,000 tpmC due to significant limitations in memory bandwidth, characteristic of traditional SMP architecture.
 
 In contrast, when utilizing all NUMA nodes, the throughput curve is relatively worse. This is attributed to reduced memory efficiency and increased context switching costs when accessing across NUMA nodes, resulting in less stable throughput. Nevertheless, scalability is greatly improved, with peak throughput increasing by 123% compared to using a single NUMA node.
 
@@ -48,8 +48,8 @@ Many pieces of code are not suitable for NUMA environments. For example, frequen
 
 To achieve optimal performance on NUMA systems [4], the following strategies are crucial:
 
-1.  Maximize the proportion of memory accesses routed to local nodes.
-2.  Balance traffic across nodes and interconnect links.
+1. Maximize the proportion of memory accesses routed to local nodes.
+2. Balance traffic across nodes and interconnect links.
 
 An unbalanced distribution of memory requests can significantly increase memory access latency on overloaded controllers, sometimes reaching up to 1000 cycles compared to approximately 200 cycles on non-overloaded controllers.
 

@@ -274,7 +274,7 @@ This schema is used by five different transactions, each creating varied access 
 4. **Order and Order-Line:** Inserts with time-delayed updates, causing rows to become stale and infrequently read.
 5. **History:** Insert-only.
 
-The diverse access patterns of this small schema with a limited number of transactions contribute to TPC-C's ongoing significance as a major database benchmark. In this book, BenchmarkSQL [65] is primarily employed to evaluate TPC-C performance in MySQL.
+The diverse access patterns of this small schema with a limited number of transactions contribute to TPC-C's ongoing significance as a major database benchmark. In this book, BenchmarkSQL [68] is primarily employed to evaluate TPC-C performance in MySQL.
 
 ## How MySQL Processes SQL?
 
@@ -652,6 +652,6 @@ For MySQL clusters, the patch introduces further optimizations for **Group Repli
 
 ## About the Author
 
-In earlier years, Bin Wang worked at an internet company focused on developing high-performance computing and high-concurrency systems. He also contributed to open-source projects like TCPCopy [60] and MySQL Proxy [61], gaining valuable experience in problem-solving, particularly in logical thinking.
+In earlier years, Bin Wang worked at an internet company focused on developing high-performance computing and high-concurrency systems. He also contributed to open-source projects like TCPCopy [65] and MySQL Proxy [66], gaining valuable experience in problem-solving, particularly in logical thinking.
 
-After leaving the internet company, he concentrated on MySQL-related development, successfully contributing to projects such as Group Replication, secondary replay, InnoDB storage engines, and query optimization [64]. He has accumulated extensive experience in problem-solving within the MySQL domain.
+After leaving the internet company, he concentrated on MySQL-related development, successfully contributing to projects such as Group Replication, secondary replay, InnoDB storage engines, and query optimization [67]. He has accumulated extensive experience in problem-solving within the MySQL domain.
