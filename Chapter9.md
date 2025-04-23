@@ -220,7 +220,7 @@ The theoretical basis for optimizing Mencius includes [32]:
 
 *Skipping is the core technique that makes Mencius efficient.*
 
-The specific Paxos network interaction diagram after Paxos skip optimization is shown in the following figure:
+[The specific Paxos network interaction]([Paxos Visualization](https://enhancedformysql.github.io/animation/paxos_app.html)) diagram after Paxos skip optimization is shown in the following figure:
 
 ![](media/55787cfe149ebf1c574aa1da4eea678c.png)
 

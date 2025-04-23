@@ -49,7 +49,7 @@ Part 5 is the concluding summary. Chapter 12 outlines future directions for MySQ
 
 ## References and Further Reading
 
-This book focuses on analyzing and solving MySQL problems, so a certain level of computer science background is recommended. To support understanding and maintain continuity, key terminology is included in the "Glossary" section of the appendix. For those lacking a foundation in MySQL, please refer to the related content in the appendix or consult dedicated MySQL books [69].
+This book focuses on analyzing and solving MySQL problems, so a certain level of computer science background is recommended. To support understanding and maintain continuity, key terminology is included in the "Glossary" section of the appendix. For those lacking a foundation in MySQL, please refer to the related content in the appendix or consult [dedicated MySQL books](https://github.com/enhancedformysql/tech-explorer-hub) [69].
 
 ## Special Terminology Explanation
 
@@ -98,6 +98,6 @@ This book meticulously organizes a wealth of ideas and knowledge contributed by 
 
 Several individuals have been crucial in the writing of this book by reviewing drafts and offering feedback. I am especially grateful for the contributions of Hongshen Wang, Jinrong Ye, Riyao Gao, and Haitao Gao. Naturally, I take full responsibility for any remaining errors or contentious opinions in this book.
 
-Finally, my deepest gratitude to my family, whose unwavering support has been indispensable throughout this nearly three-month writing journey. You are the best.
+Finally, my deepest gratitude to my family, whose unwavering support has been indispensable throughout this nearly six-month writing journey. You are the best.
 
 [Next](Part1.md)
