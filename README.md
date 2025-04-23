@@ -64,4 +64,4 @@ If you find any errata in the book, [please open a new issue](https://github.com
 
 ### Copyright
 
-Copyright © wangbin579 2024. All rights reserved.
+Copyright © wangbin579 2025. All rights reserved.
