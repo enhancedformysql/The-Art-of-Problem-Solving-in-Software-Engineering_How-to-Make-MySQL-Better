@@ -50,6 +50,12 @@ This book uses MySQL challenges as case studies to explore problem analysis and 
 
 If you find any errata in the book, [please open a new issue](https://github.com/enhancedformysql/The-Art-of-Problem-Solving-in-Software-Engineering_How-to-Make-MySQL-Better/issues).
 
+### **Prerequisite reading**
+
+[Computer Science Basics](https://enhancedformysql.github.io/tech-explorer-hub/reading/computer-basics/index.html)
+
+[High Performance MySQL](https://enhancedformysql.github.io/tech-explorer-hub/reading/database/mysql.html)
+
 ### Access the Book on GitHub Pages
 
 [Online URL](https://enhancedformysql.github.io/The-Art-of-Problem-Solving-in-Software-Engineering_How-to-Make-MySQL-Better/)
