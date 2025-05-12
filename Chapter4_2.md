@@ -279,6 +279,8 @@ A B+ tree is an m-ary tree characterized by a large number of children per node,
 
 B+ trees excel in block-oriented storage contexts, such as filesystems, due to their high fanout (typically around 100 or more pointers per node). This high fanout reduces the number of I/O operations needed to locate an element, making B+ trees especially efficient when data cannot fit into memory and must be read from disk.
 
+Concurrency control of operations in B-trees, however, is perceived as a difficult subject with many subtleties and special cases [70].  For details on this subject, please refer to the paper "A Survey of B-Tree Locking Techniques".
+
 InnoDB employs B+ trees for its indexing, leveraging their ability to ensure a fixed maximum number of reads based on the tree's depth, which scales efficiently. For specific details on B+ tree implementation in MySQL, refer to the file *btr/btr0btr.cc*.
 
 ### 4.2.8 Hybrid Data Structure

@@ -48,7 +48,7 @@ Figure 4-17. Linux CPU scheduling of threads waiting for I/O.
 
 This means that these threads waiting for I/O have little impact on other active threads. In MySQL, transaction lock waits function similarly to I/O waits—threads voluntarily block themselves and wait to be activated, which is generally manageable in cases where conflicts are not severe.
 
-It is worth mentioning that it is advisable to avoid having a large number of threads waiting for the same global latch or lock, as this can lead to frequent context switches. In NUMA environments, it can also cause frequent cache migrations, thereby affecting MySQL's scalability.
+It is worth mentioning that it is advisable to avoid having a large number of threads waiting for the same global latch or lock, as this can lead to frequent context switches. In NUMA environments, it can also cause frequent cache migrations [71], thereby affecting MySQL's scalability.
 
 With the increasing number of CPU cores and larger memory sizes available today, the impact of thread creation costs on MySQL has become smaller. Except for special scenarios such as short connection applications, MySQL can handle a large number of threads given sufficient memory. The key is to limit the number of active threads running concurrently. In theory, MySQL can support thousands of concurrent threads.
 
@@ -68,8 +68,8 @@ In Linux, processes and threads are fundamental to multitasking and parallel exe
 
 **Key differences include:**
 
--   **Memory Consumption:** Processes require separate memory space, making them more memory-intensive compared to threads, which share the memory of their parent process. A process typically consumes around 10 megabytes, whereas a thread uses about 1 megabyte.
--   **Concurrency Handling:** Given the same amount of memory, systems can support significantly more threads than processes. This makes threads more suitable for applications requiring high concurrency.
+- **Memory Consumption:** Processes require separate memory space, making them more memory-intensive compared to threads, which share the memory of their parent process. A process typically consumes around 10 megabytes, whereas a thread uses about 1 megabyte.
+- **Concurrency Handling:** Given the same amount of memory, systems can support significantly more threads than processes. This makes threads more suitable for applications requiring high concurrency.
 
 When building a concurrent database system, memory efficiency is critical. MySQL's use of a thread-based model offers an advantage over traditional PostgreSQL's process-based model, particularly in high concurrency scenarios. While PostgreSQL's model can lead to higher memory consumption, MySQL's threading model is more efficient in handling large numbers of concurrent connections.
 
@@ -81,14 +81,14 @@ For MySQL, the thread-based model is advantageous over the process model due to 
 
 **Challenges of the Thread-Based Model:**
 
-1.  **Cache Performance:** The thread-based execution model often results in poor cache performance with multiple clients.
-2.  **Complexity:** The monolithic design of modern DBMS software leads to complex, hard-to-maintain systems.
+1. **Cache Performance:** The thread-based execution model often results in poor cache performance with multiple clients.
+2. **Complexity:** The monolithic design of modern DBMS software leads to complex, hard-to-maintain systems.
 
 **Pitfalls of Thread-Based Concurrency:**
 
-1.  **Thread Management:** There is no optimal number of preallocated worker threads for varying workloads. Too many threads can waste resources, while too few restrict concurrency.
-2.  **Context Switching:** Context switches during operations can evict a large working set from the cache, causing delays when the thread resumes.
-3.  **Cache Utilization:** Round-robin scheduling does not consider the benefit of shared cache contents, leading to inefficiencies.
+1. **Thread Management:** There is no optimal number of preallocated worker threads for varying workloads. Too many threads can waste resources, while too few restrict concurrency.
+2. **Context Switching:** Context switches during operations can evict a large working set from the cache, causing delays when the thread resumes.
+3. **Cache Utilization:** Round-robin scheduling does not consider the benefit of shared cache contents, leading to inefficiencies.
 
 Despite ongoing improvements in operating systems, the thread model continues to face significant challenges in optimization.
 
@@ -106,18 +106,18 @@ The staged model is a specialized type of thread model that minimizes some of th
 
 **Benefits of the Staged Model**
 
-1.  **Targeted Thread Allocation**: Each stage allocates worker threads based on its specific functionality and I/O frequency, rather than the number of concurrent clients. This approach allows for more precise thread management tailored to the needs of different database tasks, compared to a generic thread pool size.
-2.  **Voluntary Thread Yielding**: Instead of preempting a thread arbitrarily, a stage thread voluntarily yields the CPU at the end of its stage code execution. This reduces cache eviction during the shrinking phase of the working set, minimizing the time needed to restore it. This technique can also be adapted to existing database architectures.
-3.  **Exploiting Stage Affinity**: The thread scheduler focuses on tasks within the same stage, which helps to exploit processor cache affinity. The initial task brings common data structures and code into higher cache levels, reducing cache misses for subsequent tasks.
-4.  **CPU Binding Efficiency**: The singular nature of thread operations in the staged model allows for improved efficiency through CPU binding, which is especially effective in NUMA environments.
+1. **Targeted Thread Allocation**: Each stage allocates worker threads based on its specific functionality and I/O frequency, rather than the number of concurrent clients. This approach allows for more precise thread management tailored to the needs of different database tasks, compared to a generic thread pool size.
+2. **Voluntary Thread Yielding**: Instead of preempting a thread arbitrarily, a stage thread voluntarily yields the CPU at the end of its stage code execution. This reduces cache eviction during the shrinking phase of the working set, minimizing the time needed to restore it. This technique can also be adapted to existing database architectures.
+3. **Exploiting Stage Affinity**: The thread scheduler focuses on tasks within the same stage, which helps to exploit processor cache affinity. The initial task brings common data structures and code into higher cache levels, reducing cache misses for subsequent tasks.
+4. **CPU Binding Efficiency**: The singular nature of thread operations in the staged model allows for improved efficiency through CPU binding, which is especially effective in NUMA environments.
 
 The staged model is extensively used in MySQL for tasks such as secondary replay, Group Replication, and improvements to the Redo log in MySQL 8.0. However, it is not well-suited for handling user requests due to increased response times caused by various queues. MySQL primary servers prioritize low latency and high throughput for user-facing operations, while tasks like secondary replay, which do not interact directly with users, can afford higher latency in exchange for high throughput.
 
 The figure below illustrates the processing flow of Group Replication. In this design, Group Replication is divided into multiple subprocesses connected through queues. This staged approach offers several benefits, including:
 
--   **High Efficiency**: By breaking down tasks into discrete stages, Group Replication can process tasks more effectively.
--   **Cache-Friendly Access**: The design minimizes cache misses by ensuring that related tasks are executed in sequence.
--   **Pipelined Processing**: Tasks are handled in a pipelined manner, allowing for improved throughput
+- **High Efficiency**: By breaking down tasks into discrete stages, Group Replication can process tasks more effectively.
+- **Cache-Friendly Access**: The design minimizes cache misses by ensuring that related tasks are executed in sequence.
+- **Pipelined Processing**: Tasks are handled in a pipelined manner, allowing for improved throughput
 
 ![](media/7759809055f85565e4bafedef312acc0.png)
 
@@ -133,9 +133,9 @@ Modern CPUs generate high memory request rates that can overwhelm the interconne
 
 Linux prioritizes local node allocation and minimizes thread migrations across nodes using scheduling domains. This reduces inter-domain migrations but may affect load balance and performance. To optimize memory usage:
 
-1.  Identify memory-intensive threads.
-2.  Distribute them across memory domains.
-3.  Migrate memory with threads.
+1. Identify memory-intensive threads.
+2. Distribute them across memory domains.
+3. Migrate memory with threads.
 
 Understanding these memory management principles is crucial for diagnosing and solving MySQL performance problems. Linux aims to reduce process interference by minimizing CPU switches and cache migrations across NUMA nodes.
 

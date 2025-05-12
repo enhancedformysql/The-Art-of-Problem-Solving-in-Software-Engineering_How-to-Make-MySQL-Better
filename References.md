@@ -137,4 +137,8 @@
 
 [69] https://github.com/enhancedformysql/tech-explorer-hub.
 
+[70] Graefe G (2010) A survey of B-tree locking techniques. ACM Trans Database Syst 35(3):16
+
+[71] Jean-Pierre Lozi, Baptiste Lepers, Justin Funston, Fabien Gaud, Vivien Quéma, and Alexandra Fedorova. The linux scheduler: A decade of wasted cores. In Proceedings of the Eleventh European Conference on Computer Systems, EuroSys '16, New York, NY, USA, 2016. Association for Computing Machinery.
+
 [Next](Appendix.md)
