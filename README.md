@@ -62,6 +62,10 @@ If you find any errata in the book, [please open a new issue](https://github.com
 
 [Online URL](https://enhancedformysql.github.io/The-Art-of-Problem-Solving-in-Software-Engineering_How-to-Make-MySQL-Better/)
 
+### Support
+If you find this project helpful, consider donating:
+[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://paypal.me/wangbin579)
+
 ### Copyright
 
 Copyright © wangbin579 2025. All rights reserved.
