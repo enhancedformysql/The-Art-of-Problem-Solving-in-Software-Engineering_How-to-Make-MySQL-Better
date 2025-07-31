@@ -54,9 +54,11 @@ If you find any errata in the book, [please open a new issue](https://github.com
 
 [Computer Science Basics](https://enhancedformysql.github.io/tech-explorer-hub/reading/computer-basics/index.html)
 
-[High Performance MySQL](https://enhancedformysql.github.io/tech-explorer-hub/reading/database/mysql.html)
+[Explore MySQL: A Beginner’s Journey into Database Internals](https://wangbin579.gumroad.com/l/mysql_course)
 
 [Architecture of a Database System](https://enhancedformysql.github.io/tech-explorer-hub/reading/database/database_architecture.html)
+
+
 
 ### Access the Book on GitHub Pages
 
