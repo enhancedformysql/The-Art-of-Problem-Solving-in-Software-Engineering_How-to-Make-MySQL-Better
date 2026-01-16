@@ -56,6 +56,10 @@ If you find any errata in the book, [please open a new issue](https://github.com
 
 [Explore MySQL: A Beginner’s Journey into Database Internals](https://wangbin579.gumroad.com/l/mysql_course)
 
+[MySQL Uncovered: Internals, Trace Analysis, and Performance](https://wangbin579.gumroad.com/l/mysql-internals)
+
+[PostgreSQL Uncovered: Internals, Trace Analysis, and Performance](https://wangbin579.gumroad.com/l/postgresql_course)
+
 [Architecture of a Database System](https://enhancedformysql.github.io/tech-explorer-hub/reading/database/database_architecture.html)
 
 
